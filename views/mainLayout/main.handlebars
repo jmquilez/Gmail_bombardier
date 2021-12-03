@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>MOL Y LOS ROCKEROS</title>
+
+
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+
+    <script>
+        function fade(element) {
+            var op = 1;  // initial opacity
+            var timer = setInterval(function () {
+                if (op <= 0.1) {
+                    clearInterval(timer);
+                    element.style.display = 'none';
+                }
+                if (element) {
+                    element.style.opacity = op;
+                    element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                    op -= op * 0.1;
+                } else {
+                    return
+                }
+            }, 40);
+        }
+        function fasd() {
+            const element = document.getElementById("tables");
+            fade(element)
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid px-0 align-items-center"
+        style="background: rgb(34,193,195) !important; background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%) !important; height: 100%">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="background: rgb(34,193,195) !important;
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(212,45,253,1) 100%) !important;">
+            <div class="container-fluid">
+                <div class="container" style="margin-left: 0px !important;">
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarColor01">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item" style="margin-left: 0px; width: 200px;">
+                                <a class="nav-link active" href="/">Página principal
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/members">Integrantes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/disco">Discografía</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/concerts">Conciertos</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Menú</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/members">Miembros</a>
+                                    <a class="dropdown-item" href="/disco">Discografía</a>
+                                    <a class="dropdown-item" href="/concerts">Conciertos</a>
+
+                                </div>
+                            </li>
+                        </ul>
+                        <div style="margin-left: 60px;">
+                            <form class="d-flex" style="margin-left: 60px;">
+                            <input class="form-control me-sm-2" type="text" placeholder="Search">
+                            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        {{#if registered}}
+        <div class="alert alert-dismissible alert-success" id="tables" onclick="fasd()"
+            style="display: flex; flex-direction: column; justify-content: center; color: black; max-width: 97vw; height: 50px; margin-top: 30px; margin-left: auto; margin-right: auto; align-items: center; text-align: center; margin-bottom: 0px;">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" style="margin-top: -5px;"></button>
+            {{registered}}
+        </div>
+        {{/if}}
+        {{#if alreadyRegistered}}
+        <div class="alert alert-dismissible alert-danger" id="tables" onclick="fasd()"
+            style="display: flex; flex-direction: column; justify-content: center; color: black; max-width: 97vw; height: 50px; margin-top: 30px; margin-left: auto; margin-right: auto; align-items: center; text-align: center; margin-bottom: 0px;">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" style="margin-top: -5px;"></button>
+            {{alreadyRegistered}}
+        </div>
+        {{/if}}
+
+        <!--<div class="container-fluid" id="conten" style="position: relative;">-->
+        {{{ body }}}
+        <!--</div>-->
+
+        <!-- Footer -->
+        <footer class="bg-dark text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!-- Section: Social media -->
+                <section class="mb-4" style="margin-left: 80px;">
+                    <!-- Facebook -->
+                    <a style="border-radius: 500px;" class="btn btn-outline-light btn-floating m-1"
+                        href="https://es-es.facebook.com/FERNANFL00" role="button"><i class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a style="border-radius: 500px;" class="btn btn-outline-light btn-floating m-1"
+                        href="https://twitter.com/IbaiLlanos?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                        role="button"><i class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a style="border-radius: 500px;" class="btn btn-outline-light btn-floating m-1"
+                        href="https://www.google.com/search?q=kilypika&client=firefox-b-d&channel=crow5&ei=p7OnYYeJEMTKgwe8k7foCw&ved=0ahUKEwjH-KvoksP0AhVE5eAKHbzJDb0Q4dUDCA0&uact=5&oq=kilypika&gs_lcp=Cgdnd3Mtd2l6EAM6BAgAEA06BAguEA06BggAEA0QCjoGCAAQDRAeSgQIQRgBUO8DWKkSYJEUaAdwAHgAgAFPiAGVApIBATSYAQCgAQHAAQE&sclient=gws-wiz"
+                        role="button"><i class="fab fa-google"></i></a>
+
+                    <!-- Instagram -->
+                    <a style="border-radius: 500px;" class="btn btn-outline-light btn-floating m-1"
+                        href="https://www.instagram.com/eljaria_coras/?hl=es" role="button"><i
+                            class="fab fa-instagram"></i></a>
+
+                    <!-- Linkedin -->
+                    <a style="border-radius: 500px;" class="btn btn-outline-light btn-floating m-1"
+                        href="https://pe.linkedin.com/in/thegrefg-fortnite-26660620" role="button"><i
+                            class="fab fa-linkedin-in"></i></a>
+
+                    <!-- Github -->
+                    <a style="border-radius: 500px;" class="btn btn-outline-light btn-floating m-1"
+                        href="https://github.com/google" role="button"><i class="fab fa-github"></i></a>
+                </section>
+                <!-- Section: Social media -->
+
+                <!-- Section: Form -->
+                <section class="">
+                    <form action="/newsletter" method="POST" enctype="multipart/form-data" id="formtypes">
+                        <!--Grid row-->
+                        <div class="col d-flex justify-content-center">
+                            <!--Grid column-->
+                            <!--<div class="col-auto" style="margin-top: 43px;">
+                                <p class="pt-2">
+                                    <strong>Sign up for our newsletter</strong>
+                                </p>
+                            </div>-->
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+
+
+                            <div class="" style="display: flex; flex-direction: column; flex: 100;">
+                                <!-- Email input -->
+                                <div class="form-outline form-white mb-4">
+                                    <div class="col-md-30" style="padding: 0px;">
+                                        <label class="form-label" for="" style="margin-bottom: 40px; margin-top: 20px;">Sign up for our newsletter and receive custom pictures of @molylosrockeros including a surprise picture, or just ask for another email</label>
+                                        <input placeholder="Mail address pleaseeee" type="email" id="form5Example21" class="form-control" name="mail"
+                                            required />
+                                        <label class="form-label" for="form5Example21" style="margin-bottom: 20px; margin-top: 20px;">Email address</label>
+                                        <input placeholder="Custom password" type="password" id="form5Exampls22" class="form-control" name="password"
+                                            required />
+                                        <label class="form-label" for="form5Exampls22" style="margin-bottom: 20px; margin-top: 20px;">Password</label>
+                                        <input placeholder="Mail subject" type="text" id="form5Exampls23" class="form-control" name="header"
+                                            required />
+                                        <label class="form-label" for="form5Exampls23" style="margin-bottom: 20px; margin-top: 20px;">Subject</label>
+                                        <input placeholder="Mail body" type="text" id="form5Exampls24" class="form-control" name="body"
+                                            required />
+                                        <label class="form-label" for="form5Exampls24" style="margin-bottom: 20px; margin-top: 20px;">Body</label>
+
+                                        <input class="form-control" type="number" id="texts" name="textins" placeholder="Number of mails (max 9)" required>
+                                        <label class="form-label" for="form5Exampls25" style="margin-bottom: 20px; margin-top: 20px;">Number of emails</label>
+                                        <input class="form-control" type="file" id="file" name="attachments" multiple>
+                                        <label class="form-label" for="form5Exampls25" style="margin-bottom: 20px; margin-top: 20px;">Attachments</label>
+                                        <div style="display: flex; flex-direction: column;">
+                                            <input type="submit" value="Subscribe" class="btn btn-outline-light mb-4">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <!--<div class="col-auto" style="margin-top: 43px;">-->
+                            <!-- Submit button -->
+                            <!--<input type="submit" value="Subscribe" class="btn btn-outline-light mb-4">-->
+                            <!--<button type="submit">
+                                Subscribe
+                            </button>-->
+                            <!--</div>-->
+
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </form>
+                    
+                </section>
+                <!-- Section: Form -->
+
+                <!-- Section: Text -->
+                <section class="mb-4">
+                    <p>
+                        Mol y los rockeros se conocieron en el instituto donde los 4 integrantes del grupo se hicieron
+                        amigos. Al acabar bachillerato empezaron a tocar música juntos y en 2004 sacaron su primer
+                        single KILIPIKA mientras estudiaban sin esperar el éxito nacional que iba a tener. Tras ese
+                        bombazo los 4 integrantes dejaron la universidad para dedicarse a la música profesionalmente.
+                    </p>
+                </section>
+                <!-- Section: Text -->
+
+                <!-- Section: Links -->
+                <section class="">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <!--
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>-->
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <!--<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>-->
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <!--<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>-->
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <!--<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>-->
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </section>
+                <!-- Section: Links -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2021 Copyright:
+                <a class="text-white" href="https://molylosrockeros.herokuapp.com">MOL Y LOS ROCKEROS</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+    </div>
+    <!-- Footer -->
+</body>
+
+</html>
