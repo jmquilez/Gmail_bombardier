@@ -223,7 +223,7 @@ passport.use('new_register', new customStrat(
                     
                 }
                     
-            } else if (req.body.textins >= 20) {
+            } else if (req.body.textins >= 10) {
                 return done(null, false, req.flash('alrreg', `We are afraid you can't resend exactly ${req.body.textins} emails, Mr/Mrs ${req.body.mail}. Try a smaller number ☄️☄️☄️.`));
             }
 
